@@ -25,59 +25,9 @@ import {
   TableRow,
   Textarea,
 } from "../shared/ui";
-
-// 타입 정의
-interface Post {
-  id: number;
-  title: string;
-  body: string;
-  userId: number;
-  tags?: string[];
-  reactions?: {
-    likes: number;
-    dislikes: number;
-  };
-  author?: User;
-}
-
-interface User {
-  id: number;
-  username: string;
-  image: string;
-  firstName?: string;
-  lastName?: string;
-  age?: number;
-  email?: string;
-  phone?: string;
-  address?: {
-    address: string;
-    city: string;
-    state: string;
-  };
-  company?: {
-    name: string;
-    title: string;
-  };
-}
-
-interface Comment {
-  id: number;
-  body: string;
-  postId: number;
-  user: User;
-  likes: number;
-}
-
-interface NewCommentInput {
-  body: string;
-  postId: number | null;
-  userId: number;
-}
-
-interface Tag {
-  slug: string;
-  url: string;
-}
+import { Post, Tag } from "../entities/post/model/post.type";
+import { User } from "../entities/user/model/user.type";
+import { Comment, NewCommentInput } from "../entities/comment/model/comment.type";
 
 const PostsManager = () => {
   const navigate = useNavigate();
