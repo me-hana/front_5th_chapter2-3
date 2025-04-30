@@ -211,14 +211,6 @@ const PostsManager = () => {
     setLoading(false);
   };
 
-  // const safeSetSelectedPost = (post: Post | null) => {
-  //   if (post && typeof post.id === "number") {
-  //     setSelectedPost(post)
-  //   } else {
-  //     console.warn("선택된 게시물이 유효하지 않습니다.")
-  //   }
-  // }
-
   // 게시물 추가
   const addPost = async () => {
     try {
